@@ -1,0 +1,282 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-border-input: hsl(205, 63%, 48%);
+  /* primary/main color */
+  --clr-primary-5: #49a6e9;
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-form-label: hsl(210, 22%, 49%);
+  --clr-form: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --add-card-background: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-input-background: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    background-color: whitesmoke;
+    transition: all 0.3s linear;
+    height: 100vh;
+}
+.container{
+    width: 500px;
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    padding: 0.5rem;
+}
+.header{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.7fr 1.3fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+}
+.card--title{
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.add--card--btn{
+    border: 2px solid gray;
+    border-radius: 2px;
+    padding: 0.3rem 0.3rem;
+    background: transparent;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+.add--card--btn .fa-solid{
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #222;
+}
+.add--card--btn span{
+    display: inline;
+    font-size: 1.1rem;
+    color: #222;
+    font-weight:700;
+}
+.slider{
+    overflow: hidden;
+    width: 450px;
+    height: 300px;
+}
+
+.card-container{
+    border-radius: 5px;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(0);
+}
+.card{
+  perspective: 800px;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    cursor: pointer;
+    width: 450px;
+    height: 300px;
+    background-color: #6a89cc;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    /* backface-visibility: hidden; */
+}
+.card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+.card.flipped {
+  transform: rotateY(-180deg);
+}
+/*//////////////////////////*/
+.card .card-front-face,
+.card-back-face {
+  /* width: 100%;*/
+  width: 450px;
+  height: 300px;
+  backface-visibility: hidden;
+}
+.card .card-front-face,
+.card-back-face p{
+  font-size: 2rem;
+  font-weight: 600;
+}
+.card .card-front-face p{
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-40%,-50%);
+}
+.card .card-back-face p{
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-40%,-50%);
+}
+
+.card .card-front-face {
+  background: #38ada9;
+  display: block;
+}
+.card.flipped .card-front-face {
+  display: none;
+}
+.card .card-back-face {
+  background: #079992;
+  transform: rotateY(180deg);
+  display: none;
+}
+.card.flipped .card-back-face {
+  display: block;
+}
+/*//////////////////////////*/
+.icon--container{
+    display: grid;
+    place-items: center;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-rows: 1fr;
+    column-gap: 5rem;
+}
+.icon--container i{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+}
+/*/////////////////*/
+.add-card-window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--clr-grey-10);
+    z-index: 100;
+    transition: all .5s;
+  }
+  .hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+  .add-card-window .btn--close-card {
+    font-family: inherit;
+    color: inherit;
+    position: absolute;
+    top: .5rem;
+    right: 1.6rem;
+    font-size: 3.5rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+  }
+  
+  .add-card-window .btn--close-card:hover{
+    color: #f38e82;
+    font-weight: bold;
+  }
+
+.add--card--form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    display: grid;
+    place-items: center;
+    grid-template-rows: 0.5fr 0.3fr 1fr 0.3fr 1fr 0.4fr;
+    grid-template-columns: 1fr;
+}
+
+.model--card--title{
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+input{
+    padding: 1rem 1.5rem;
+    width: 100%;
+    font-size: 1rem;
+    color: #222;
+    background-color: var(--clr-input-background);
+    font-weight: 600;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+  }
+  input:hover{
+    border: 2px solid var(--clr-border-input);
+  }
+  .label{
+    text-align: left;
+    color: var(--clr-form-label);
+    font-size: 1rem;
+    text-transform: capitalize;
+  }
+
+.add--card--form .add--card--btn{
+    background-color: #fff;
+    transition: all 0.4s linear;
+}
+.add--card--form .add--card--btn:hover{
+   background-color: rebeccapurple;
+   border: 2px solid rebeccapurple;
+}
+
+.add--card--form .add--card--btn:hover .fa-solid{
+    color: #fff;
+}
+.add--card--form .add--card--btn:hover span{
+    color: #fff;
+}
+.warning{
+  border: 2px solid rgba(255, 111, 89, 0.8)!important;
+}
+/*///////////////////////////////////*/
+
+  
+  

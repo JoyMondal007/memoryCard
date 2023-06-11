@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--font awesome cdn link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Memory Card</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <p class="card--title">memory cards</p>
+            <button type="button" class="add--card--btn">
+                <i class="fa-solid fa-plus"></i>
+                <span>add new card</span>
+            </button>
+        </div>
+
+        <div class="slider">
+            <div class="card-container">
+
+                <!-- <div class="card" data-id="aurelia">
+                    <div class="card-front-face">
+                        <p>HTTP</p>
+                    </div>
+                    <div class="card-back-face">
+                        <p> Hypertext Transfar Protocol</p>
+                    </div>
+                </div>
+              
+                <div class="card" data-id="js">
+                    <div class="card-front-face">
+                        <p>HTML</p>
+                    </div>
+                    <div class="card-back-face">
+                        <p>Hypertext Markup Language</p>
+                    </div>
+                </div>
+              
+                <div class="card" data-id="vue">
+                    <div class="card-front-face">
+                        <p>CSS</p>
+                    </div>
+                    <div class="card-back-face">
+                        <p>Casceding Style Sheet</p>
+                    </div>
+                </div>   -->
+
+            </div>
+        </div>
+
+        <div class="icon--container">
+            <i class="fa-solid fa-arrow-left"></i>
+            <p id="count">
+                0/0
+            </p>
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
+    </div>
+    
+    <div class="add-card-window hidden">
+       <button class="btn--close-card">&times;</button>
+
+       <form action="/action_page.php"    method="post" class="add--card--form">
+            <h2 class="model--card--title">add new card</h2>
+
+            <label for="text" class="label">text</label>
+            <input type="text" name="text" id="text" class="search__field" placeholder="Enter Your Question..." autocomplete="off" required>
+
+            <label for="answer" class="label">Answer</label>
+            <input type="text" name="amount" id="answer" placeholder="Enter Your Answer..." autocomplete="off" required>
+
+            <button type="button" class="add--card--btn model--btn">
+                <i class="fa-solid fa-plus"></i>
+                <span>add card</span>
+            </button>
+       </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
